@@ -13,9 +13,14 @@ describe Atm do
   end
 
   it '1 allow subject withdraw if account has enough balance' do
-    expected_output = {status: true, message: 'success', date: Date.today, amount: 45}
-    expect(subject.withdraw(45, '1234', account)).to eq expected_output
-  end
+    expected_output = {
+      status: true,
+      message: 'success',
+      date: Date.today,
+      amount: 45,
+      bills: [20, 20, 5] }
+      expect(subject.withdraw(45, '1234', account)).to eq expected_output
+    end
 
   it '2 has $1000 on initialize' do
     expect(subject.funds).to eq 1000
@@ -53,5 +58,4 @@ describe Atm do
     expected_output = {status: false, message: 'account is disabled', date: Date.today }
     expect(subject.withdraw(100, '1234', account )).to eq expected_output
   end
-
 end
