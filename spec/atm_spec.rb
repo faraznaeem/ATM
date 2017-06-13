@@ -1,6 +1,8 @@
 require './lib/atm.rb'
 
 describe Atm do
+  #named all tests by numbers to enhance readability in Rspec and cut down time
+  #spent on searching for errors.
 
   let(:account) { instance_double('Account', pin_code: '1234') } #the happy path section
 
@@ -33,4 +35,10 @@ describe Atm do
     expected_output = {status: false, message: 'insufficient funds in atm', date: Date.today }
     expect(subject.withdraw(100, '1234', account)).to eq expected_output
   end
+
+  it '6 reject withdraw if pin is wrong' do
+    expected_output = { status: false, message: 'wrong pin', date: Date.today }
+    expect(subject.withdraw(50, 9999, account)).to eq expected_output
+  end
+
 end
