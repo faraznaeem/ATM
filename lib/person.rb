@@ -4,11 +4,12 @@ require './lib/atm'
 class Person
   attr_accessor :name
   attr_accessor :cash
-  #attr_accessor :account
+  attr_accessor :account
 
     def initialize(attrs = {})
       @name = set_name(attrs[:name])
       @cash = 0
+      @account = nil
     end
 
   private
