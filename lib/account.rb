@@ -3,13 +3,14 @@ class Account
   attr_accessor :balance #fucking shit why dont you work
   attr_accessor :pin_code
   attr_accessor :exp_date
-
+  attr_accessor :account_status
   STANDARD_VALIDITY_YRS = 5
 
   def initialize
       @pin_code = make_pin
       @balance = 0
       @exp_date = set_exp_date
+      @account_status = :active
   end
 
   private

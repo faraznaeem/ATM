@@ -18,4 +18,8 @@ describe Account do
     expect(subject.exp_date).to eq expected_date
 end
 
+it '4 is expected to have :active status on initialize' do
+  expect(subject.account_status).to eq :active
+end
+
 end
