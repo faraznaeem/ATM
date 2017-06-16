@@ -1,7 +1,6 @@
 require './lib/account.rb'
 
 describe Account do
-#placed numbers on tests to increase readability
 let(:person) {instance_double('Person', name: 'Thomas')}
 subject { described_class.new({owner: person}) }
 
