@@ -1,21 +1,25 @@
 # The ATM challenge
 
-###Synopsis
+Synopsis
+
 This project is the first excercise our cohort have done using Ruby programming language.
 The project consists of making a virtual ATM machine, with the interaction from the terminal.
 
 
-###Motivation
+Motivation
+
 The ATM challenge shows how different parts of a program interact and going through
 the basic methods of Ruby.
 
-###Installation
+Installation
+
 To run the program you need to have a working terminal with irb installed, and download all the files from the ATM-repository
 
-###Running the ATM
+Running the ATM
+
 To run the virtual ATM you need to enter the irb-mode.
 
-###Steps to initialize the ATM
+Steps to initialize the ATM
 
 ```irb
 load './lib/atm.rb'
@@ -34,14 +38,14 @@ No need to load
 './lib/account.rb'
 ```
 
-####Create a person (user)
+Create a person (user)
 
 ```irb
 person = Person.new({name: 'Faraz'})
 => #<Person:0x007f9f5199c710 @name="Faraz", @cash=0, @account=nil>
 ```
 
-####Create an Account
+Create an Account
 
 ```irb
 account = person.create_account     
@@ -49,21 +53,21 @@ account = person.create_account
 ```
 
 
-####Create an ATM
+Create an ATM
 
 ```irb
 atm = Atm.new
 => #<Atm:0x007f9f5197f2c8 @funds=1000> 
 ```
 
-####Deposit money to the account
+Deposit money to the account
 
 ```irb
 person.deposit(100)
  => 100 
 ```
 
-####Withdraw money from the account
+Withdraw money from the account
 
 ```irb
 person.withdraw({amount:50, account:account, atm:atm, pin:'8475'})
@@ -72,14 +76,14 @@ person.withdraw({amount:50, account:account, atm:atm, pin:'8475'})
 ```
 
 
-####Check balance of the account
+Check balance of the account
 
 ```irb
 account.balance
  => 50
 ```
 
-####Check Balance of the ATM
+Check Balance of the ATM
 
 ```irb
 atm.funds
