@@ -2,7 +2,7 @@ require './lib/account'
 require './lib/atm'
 
 class Person
-  attr_accessor :name, :cash, :account
+  attr_accessor :name, :cash, :account #refactored
 
     def initialize(attrs = {})
       @name = set_name(attrs[:name])
@@ -30,7 +30,7 @@ class Person
     end
 
     def withdraw_funds(args)
-     args[:atm] == nil ? missing_atm : atm = args[:atm]
+     args[:atm].nil? ? missing_atm : atm = args[:atm] #refactore nil
      account = @account
      amount = args[:amount]
      pin = args[:pin]
