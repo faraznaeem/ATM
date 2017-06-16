@@ -2,8 +2,8 @@ require './lib/account'
 require './lib/atm'
 
 class Person
-  attr_accessor :name, :cash, :account #refactored
-
+  attr_accessor :name, :cash, :account
+  
     def initialize(attrs = {})
       @name = set_name(attrs[:name])
       @cash = 0
@@ -30,12 +30,12 @@ class Person
     end
 
     def withdraw_funds(args)
-     args[:atm].nil? ? missing_atm : atm = args[:atm] #refactore nil
+     args[:atm].nil? ? missing_atm : atm = args[:atm]
      account = @account
      amount = args[:amount]
      pin = args[:pin]
      response = atm.withdraw(amount, pin, account)
-     response[:status] == true ? increase_cash(response) : response #refactored
+     response[:status] ? increase_cash(response) : response
     end
 
     def set_name(name)

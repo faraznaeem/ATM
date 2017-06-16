@@ -34,24 +34,25 @@ subject { described_class.new(name: 'Faraz') }
       it '8 can deposit funds' do
         expect(subject.deposit(100)).to be_truthy
       end
-  it 'funds are added to the accounst balance - deducted from cash' do
+
+  it '9 funds are added to the accounst balance - deducted from cash' do
     subject.cash = 100
     subject.deposit(100)
     expect(subject.account.balance).to be 100
     expect(subject.cash).to be 0
   end
 
-  it 'can withdraw funds' do
+  it '10 can withdraw funds' do
     command = lambda { subject.withdraw(amount: 100, pin: subject.account.pin_code, account: subject.account, atm: atm) }
     expect(command.call).to be_truthy
   end
 
-  it 'withdraw is expected to raise error if no ATM is passed in' do
+  it '11 withdraw is expected to raise error if no ATM is passed in' do
     command = lambda { subject.withdraw(amount: 100, pin: subject.account.pin_code, account: subject.account) }
     expect { command.call }.to raise_error 'An ATM is required'
   end
 
-  it 'funds are added to cash - deducted from account balance' do
+  it '12 funds are added to cash - deducted from account balance' do
     subject.cash = 100
     subject.deposit(100)
     subject.withdraw(amount: 100, pin: subject.account.pin_code, account: subject.account, atm: atm)
@@ -60,8 +61,8 @@ subject { described_class.new(name: 'Faraz') }
   end
 end
 
-  describe '9 can not manage funds if no account been created' do
-     it '10 can\'t deposit funds' do
+  describe '13 can not manage funds if no account been created' do
+     it '14 can\'t deposit funds' do
        expect { subject.deposit(100) }.to raise_error(RuntimeError, 'No account present')
      end
    end
