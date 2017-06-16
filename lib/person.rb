@@ -2,9 +2,7 @@ require './lib/account'
 require './lib/atm'
 
 class Person
-  attr_accessor :name
-  attr_accessor :cash
-  attr_accessor :account
+  attr_accessor :name, :cash, :account
 
     def initialize(attrs = {})
       @name = set_name(attrs[:name])
