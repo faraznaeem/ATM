@@ -35,11 +35,11 @@ class Person
      amount = args[:amount]
      pin = args[:pin]
      response = atm.withdraw(amount, pin, account)
-     response[:status] == true ? increase_cash(response) : response
+     response[:status] == true ? increase_cash(response) : response #refactored
     end
 
     def set_name(name)
-      name == nil ? missing_name : name
+      name.nil? ? missing_name : name
     end
 
     def missing_name
