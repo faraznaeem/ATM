@@ -18,9 +18,9 @@ To run the virtual ATM you need to enter the irb-mode.
 ###Steps to initialize the ATM
 ```
 load './lib/atm.rb'
+``` 
 ```
-```
-=> true
+=> true 
 ````
 ```
 
@@ -28,11 +28,11 @@ load './lib/atm.rb'
 load './lib/person.rb'
 ```
 ```
-=> true
+=> true 
 ```
 
 
-No need to load
+No need to load 
 
 ```
 './lib/account.rb'
@@ -62,7 +62,7 @@ atm = Atm.new
 ```
 
 ```
-=> #<Atm:0x007f9f5197f2c8 @funds=1000>
+=> #<Atm:0x007f9f5197f2c8 @funds=1000> 
 ```
 
 ####Deposit money to the account
@@ -72,7 +72,7 @@ person.deposit(100)
 ```
 
 ```
- => 100
+ => 100 
 ```
 
 ####Withdraw money from the account
@@ -84,7 +84,7 @@ person.withdraw({amount:50, account:account, atm:atm, pin:'8475'})
 (please enter pin code from previous step)
 
 ```
-=> -50
+=> -50 
 ```
 
 
@@ -104,5 +104,5 @@ atm.funds
 ```
 
 ```
-=> 950
+=> 950 
 ```
